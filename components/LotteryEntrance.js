@@ -100,7 +100,7 @@ export default function LotteryEntrance() {
   };
 
   const handleError = (error) => {
-    handleNewNotification("error");
+    handleNewNotification("error", "Transaction Failed", error.message);
     console.log({ error });
   };
 
@@ -114,8 +114,33 @@ export default function LotteryEntrance() {
   return (
     <>
       {raffleAddress ? (
-        <div className="flex flex-col p-5">
-          <p className="pt-5 pb-5 mb-2">
+        <div className="flex flex-col p-4">
+          <h2 className="font-bold">Instructions</h2>
+          <div
+            className="font-thin tracking-wide
+"
+          >
+            <p>1. Connect your wallet with Rinkeby network.</p>
+            <p>
+              2. Fill you wallet with some Rinkeby eth from
+              <a
+                href="https://faucets.chain.link/rinkeby"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-normal text-blue-600 visited:text-purple-600"
+              >
+                {" "}
+                here
+              </a>
+            </p>
+            <p>3. Enter the lottery by clicking the button below.</p>
+            <p>
+              4. Winner will be picked from list of players randomly after 30
+              days.
+            </p>
+          </div>
+
+          <p className="py-4 mb-2">
             Entrance Fee: {ethers.utils.formatEther(entranceFee)} ether
           </p>
           <Button
@@ -125,11 +150,14 @@ export default function LotteryEntrance() {
             disabled={isFetching || isLoading}
             onClick={handleEnterLottery}
           />
-          <p className="pt-5 pb-5">Number of players: {playersCount}</p>
-          <p className="pt-5 pb-5">Recent winner: {recentWinner}</p>
+          <p className="py-4">Number of players participated: {playersCount}</p>
+          <p className="py-4">Recent winner: {recentWinner}</p>
         </div>
       ) : (
-        <p className="pt-5 pb-5">No Lottery contract address detected</p>
+        <div className="px-4">
+          <p className="py-4">Welcome to the Decentralized Lottery System</p>
+          <p className="py-4">Please click on Connect Wallet to get started</p>
+        </div>
       )}
     </>
   );
