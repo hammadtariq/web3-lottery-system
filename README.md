@@ -16,6 +16,7 @@
 4. Web3uikit
 5. IPFS
 6. NextJS
+7. Tailwind CSS
 
 ## Getting Started for FE
 
