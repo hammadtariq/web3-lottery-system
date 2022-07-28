@@ -4,7 +4,8 @@
 
 1. Generate random numbers using chainlink VRF 2.0
 2. Auto trigger Pick Lottery Winner event using chainlink keepers
-3. Frontend is deployed on IPFS node
+3. Frontend is deployed on IPFS node using Fleek CI/CD
+   https://plain-moon-4770.on.fleek.co/
 4. Smart contract is deployed on Rinkeby Testnet
    https://rinkeby.etherscan.io/address/0x17A639eb47a4189504554e476a38F7921CAe6F38#events
 
